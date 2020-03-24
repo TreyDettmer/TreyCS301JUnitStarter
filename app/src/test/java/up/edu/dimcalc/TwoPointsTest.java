@@ -21,7 +21,7 @@ public class TwoPointsTest {
         Point p2 = testPoints.getPoint(1);
 
         //changing the 0 on the next line to 1 results in an AssertianError. The assertion expected a 1 but got a 0.
-        assertEquals(1, p1.x);
+        assertEquals(0, p1.x);
 
         assertEquals(0, p1.y);
 
@@ -92,9 +92,9 @@ public class TwoPointsTest {
         testPoints.randomValue(1);
         int xDiff = testPoints.getPoint(0).x - testPoints.getPoint(1).x;
         int yDiff = testPoints.getPoint(0).y - testPoints.getPoint(1).y;
-        double distance = (int)Math.sqrt(Math.pow(xDiff,2) + Math.pow(yDiff,2));
+        int distance = (int)Math.sqrt(Math.pow(xDiff,2) + Math.pow(yDiff,2));
 
-        assertEquals(distance,testPoints.distance(),.01);
+        assertEquals(distance,testPoints.distance());
     }
 
     @Test
